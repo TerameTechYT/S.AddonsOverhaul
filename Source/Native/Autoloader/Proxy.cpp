@@ -147,7 +147,7 @@ void Proxy::Initialize()
     {
         MessageBox(
             nullptr,
-            L"Stationeers.Addons",
+            L"S.AddonsOverhaul",
             L"Failed to load 'version.dll'! Please to report this error to Erdroy#0001 or Stationeers.Addons server on Discord.",
             MB_OK
         );

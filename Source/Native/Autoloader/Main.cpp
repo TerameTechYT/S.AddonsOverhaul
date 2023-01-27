@@ -34,9 +34,9 @@ DETOUR_FUNC(mono_runtime_invoke, MonoObject*, MonoMethod* method, void* obj, voi
 
     if (string_ends_with(methodName, "Start")) {
         MonoDomain* domain = mono_get_root_domain();
-        MonoAssembly* assembly = mono_domain_assembly_open(domain, "AddonManager/Stationeers.Addons.dll"); // TODO: Clean this up
+        MonoAssembly* assembly = mono_domain_assembly_open(domain, "AddonManager/S.AddonsOverhaul.dll"); // TODO: Clean this up
         MonoImage* image = mono_assembly_get_image(assembly);
-        MonoClass* getClass = mono_class_from_name(image, "Stationeers.Addons", "Loader");
+        MonoClass* getClass = mono_class_from_name(image, "S.AddonsOverhaul", "Loader");
         MonoMethod* loaderMethod = mono_class_get_method_from_name(getClass, "Load", 0);
         p_mono_runtime_invoke(loaderMethod, obj, params, exc); // If I set 'obj' to NULL, it fails. WTF?
 

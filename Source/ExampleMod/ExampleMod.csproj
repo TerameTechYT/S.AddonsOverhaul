@@ -48,9 +48,9 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Stationeers.Addons\Stationeers.Addons.csproj">
+    <ProjectReference Include="..\S.AddonsOverhaul\S.AddonsOverhaul.csproj">
       <Project>{cc37b64d-6637-4e11-ab99-30a82343cd8c}</Project>
-      <Name>Stationeers.Addons</Name>
+      <Name>S.AddonsOverhaul</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
