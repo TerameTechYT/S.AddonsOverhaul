@@ -1,9 +1,9 @@
 # S.AddonsOverhaul
-An overhaul of
+**An overhaul of**
 # Stationeers.Addons
 <a href="https://discord.gg/b6kFrUATdm"><img src="https://discordapp.com/api/guilds/795601381956124693/widget.png"/></a></br>
 
-**Stationeers.Addons** is a fully-fledged modding framework for [Stationeers](https://store.steampowered.com/app/544550/Stationeers/). Working just like the standard mods (XML) but with scripting and custom-content support!
+**S.AddonsOverhaul** is a fully-fledged modding framework for [Stationeers](https://store.steampowered.com/app/544550/Stationeers/). Working just like the standard mods (XML) but with scripting and custom-content support!
 
 **Current status:** Available for early testing.<br>
 
@@ -16,13 +16,14 @@ Go to [Releases](https://github.com/TerameTechYT/S.AddonsOverhaul/releases), sel
 
 ## Links
 * [Offical Discord](https://discord.gg/b6kFrUATdm)
+* [Discord](https://discord.gg/B4tBHk5Tc9)
 * [Offical Trello](https://trello.com/b/zSHKh2XO/stationeersaddons)
 * [Official Github](https://github.com/Erdroy/Stationeers.Addons)
 
 ## Building 
-`Visual Studio 2019` is required and `Visual Studio Tools for Unity` installation is recommended. 
+`Visual Studio 2019 OR Visual Studio 2022` is required and `Visual Studio Tools for Unity` installation is recommended. 
 * Open `Source/Stationeers.VS.props` file, and set the path to your game installation directory (has to end with a backslash). 
-* Open `Source/Stationeers.Addons.sln` and start playing with it! See [Creating addons](https://github.com/TerameTechYT/S.AddonsOverhaul#creating-addons) to find out more.
+* Open `Source/Stationeers.Addons.sln` and start playing with it! See [Creating Addons](https://github.com/TerameTechYT/S.AddonsOverhaul#creating-addons) to find out more.
 
 ## Creating addons
 If you want to create your own addon, read here: [CREATING-ADDONS](Docs/CREATING-ADDONS.md).
@@ -31,7 +32,7 @@ If you want to create your own addon, read here: [CREATING-ADDONS](Docs/CREATING
 If you want to debug your own addon, read here: [DEBUGGING-ADDONS](Docs/DEBUGGING-ADDONS.md).
 
 ## Addons
-* [On Github](https://github.com/Erdroy/Stationeers.Addons)
+* [On Github](https://github.com/Erdroy/Stationeers.Addons#addons)
 
 ## Dependecies
 * Mono.Cecil
