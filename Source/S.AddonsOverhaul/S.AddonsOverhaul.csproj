@@ -74,6 +74,8 @@
   <ItemGroup>
     <Compile Include="API\BundleManager.cs" />
     <Compile Include="API\PluginStorage.cs" />
+    <Compile Include="Converter\Converter.cs" />
+    <Compile Include="Converter\IConverter.cs" />
     <Compile Include="Core\LocalMods.cs" />
     <Compile Include="Core\AddonsLogger.cs" />
     <Compile Include="Constants.cs" />

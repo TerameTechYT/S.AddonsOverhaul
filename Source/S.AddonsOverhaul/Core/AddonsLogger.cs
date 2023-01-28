@@ -1,6 +1,7 @@
 // Stationeers.Addons (c) 2018-2022 Damian 'Erdroy' Korczowski & Contributors
 
 using UnityEngine;
+using Assets.Scripts;
 
 namespace S.AddonsOverhaul.Core
 {
@@ -16,7 +17,7 @@ namespace S.AddonsOverhaul.Core
         public static void Log(string message)
         {
             FixMessage(ref message);
-            Debug.Log($"[S.Addons.Overhaul - LOG] {message}");
+            ConsoleWindow.Print($"[S.AddonsOverhaul - LOG] {message}");
         }
 
         /// <summary>
@@ -26,7 +27,7 @@ namespace S.AddonsOverhaul.Core
         public static void Warning(string message)
         {
             FixMessage(ref message);
-            Debug.LogWarning($"[S.Addons.Overhaul - WARNING] {message}");
+            ConsoleWindow.PrintAction($"[S.AddonsOverhaul - WARNING] {message}");
         }
 
         /// <summary>
@@ -36,7 +37,7 @@ namespace S.AddonsOverhaul.Core
         public static void Error(string message)
         {
             FixMessage(ref message);
-            Debug.LogError($"[S.Addons.Overhaul - ERROR] {message}");
+            ConsoleWindow.PrintError($"[S.AddonsOverhaul - ERROR] {message}");
         }
 
         private static void FixMessage(ref string message)

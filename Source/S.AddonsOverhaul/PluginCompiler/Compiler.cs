@@ -8,6 +8,7 @@ using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
+using S.AddonsOverhaul.Converter;
 using S.AddonsOverhaul.Core;
 using S.AddonsOverhaul.PluginCompiler.Analyzers;
 using UnityEngine;
@@ -79,7 +80,7 @@ namespace S.AddonsOverhaul.PluginCompiler
                     return false;
                 }
 
-                syntaxTrees.Add(CSharpSyntaxTree.ParseText(File.ReadAllText(sourceFile)));
+                syntaxTrees.Add(CSharpSyntaxTree.ParseText(Converter.Converter.ConvertScript(File.ReadAllText(sourceFile))));
             }
 
             // Check server/game instance (might make this more thorough or include it as part of signature)
@@ -190,7 +191,7 @@ namespace S.AddonsOverhaul.PluginCompiler
             foreach (var diagnostic in diagnostics)
             {
                 var message = diagnostic.GetMessage();
-
+                
                 if (diagnostic.Severity == DiagnosticSeverity.Hidden) continue;
                 
                 // Ignore warnings about mscorlib

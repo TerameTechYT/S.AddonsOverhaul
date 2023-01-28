@@ -46,7 +46,7 @@ But please, make sure that people know that it's an addon and not a standard mod
 1. If you have custom thumbnail - include the addon [overlay](../Source/AddonOverlay.png).
 2. Add this text to the workshop description at the end:
 ```
-This mod requires Stationeers.Addons, read how to install it here: https://github.com/Erdroy/Stationeers.Addons
+This mod requires Stationeers.Addons, read how to install it here: https://github.com/TerameTechYT/S.AddonsOverhaul#download--installation
 ```
 And that is it :) 
 
