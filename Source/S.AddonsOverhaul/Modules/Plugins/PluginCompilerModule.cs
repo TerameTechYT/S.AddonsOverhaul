@@ -6,12 +6,13 @@ using System.Collections.Generic;
 using System.IO;
 using Assets.Scripts.Networking;
 using Assets.Scripts.Networking.Transports;
+using Assets.Scripts.Serialization;
 using S.AddonsOverhaul.Core;
+using S.AddonsOverhaul.Mod;
 using S.AddonsOverhaul.PluginCompiler;
 using UnityEngine;
 
-// TODO: Read XML file and get the real addon name to show
-// TODO: Detect when plugin doesn't need to be compiled (not changed etc.)
+// DONE POSSIBLY: Detect when plugin doesn't need to be compiled (not changed etc.)
 // TODO: Add non-compiled (skipped) plugins to the CompiledPlugins list
 
 namespace S.AddonsOverhaul.Modules.Plugins
@@ -70,9 +71,10 @@ namespace S.AddonsOverhaul.Modules.Plugins
                 try
                 {
                     var addonDirectory = localPluginDirectory;
+                    var addonName = XmlSerialization.Deserialize<ModInfo>(Path.Combine(addonDirectory.ToString(), "About", "About.xml"), "ModMetadata").Name;
+                    var addonAuthor = XmlSerialization.Deserialize<ModInfo>(Path.Combine(addonDirectory.ToString(), "About", "About.xml"), "ModMetadata").Author;
 
-                    var addonName = "local-" + new DirectoryInfo(localPluginDirectory).Name;
-                    var assemblyName = addonName + "-Assembly"; // TODO: Make some shared project for string constants etc.
+                    var assemblyName = addonName.Trim() + " - AssemblyCSharp"; // TODO: Make some shared project for string constants etc.
                     var assemblyFile = "AddonManager/AddonsCache/" + assemblyName + ".dll";
 
                     if (!Directory.Exists(addonDirectory))
@@ -109,7 +111,7 @@ namespace S.AddonsOverhaul.Modules.Plugins
                     }
 
                     // Compile addon source code
-                    if (!Compiler.Compile(addonName, addonScripts))
+                    if (!Compiler.Compile(addonName, addonAuthor, addonScripts))
                     {
                         AddonsLogger.Error($"Could not compile addon plugin '{addonName}'!");
                         continue;
@@ -146,9 +148,10 @@ namespace S.AddonsOverhaul.Modules.Plugins
                 try
                 {
                     var addonDirectory = itemWrap.DirectoryPath;
-                
-                    var addonName = "workshop-" + itemWrap.Id;
-                    var assemblyName = addonName + "-Assembly"; // TODO: Make some shared project for string constants etc.
+                    var addonName = XmlSerialization.Deserialize<ModInfo>(Path.Combine(addonDirectory.ToString(), "About", "About.xml"), "ModMetadata").Name;
+                    var addonAuthor = XmlSerialization.Deserialize<ModInfo>(Path.Combine(addonDirectory.ToString(), "About", "About.xml"), "ModMetadata").Author;
+
+                    var assemblyName = addonName.Trim() + " - AssemblyCSharp"; // TODO: Make some shared project for string constants etc.
                     var assemblyFile = "AddonManager/AddonsCache/" + assemblyName + ".dll";
                 
                     if (!Directory.Exists(addonDirectory))
@@ -169,14 +172,13 @@ namespace S.AddonsOverhaul.Modules.Plugins
                     
                     // Check if the addon has been updated before we added the sandbox, if so, make it trusted
                     var isTrusted = itemWrap.LastWriteTime < Constants.SandboxIntroductionDate;
-
                     if (isTrusted)
                     {
                         AddonsLogger.Warning($"Addon '{addonName}' is trusted! (backwards-compatibility)");
                     }
                     
                     // Compile addon source code
-                    if (!Compiler.Compile(addonName, addonScripts, isTrusted))
+                    if (!Compiler.Compile(addonName, addonAuthor, addonScripts, isTrusted))
                     {
                         AddonsLogger.Error($"Could not compile addon plugin '{addonName}'!");
                         continue;

@@ -1,11 +1,8 @@
 ﻿// Stationeers.Addons (c) 2018-2022 Damian 'Erdroy' Korczowski & Contributors
 
-using System;
 using System.Collections;
-using Assets.Scripts;
 using Assets.Scripts.UI;
 using S.AddonsOverhaul.Core;
-using UnityEngine;
 using UnityEngine.Networking;
 
 namespace S.AddonsOverhaul.Modules.Plugins

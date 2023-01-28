@@ -10,7 +10,8 @@ namespace S.AddonsOverhaul.PluginCompiler.Whitelists
             whitelist.BlacklistTypes();
             
             // Allow all namespaces from the game assembly, but exclude some
-            whitelist.WhitelistAssembly(typeof(Bread),
+            whitelist.WhitelistAssembly(
+                typeof(Bread),
                 typeof(Assets.Scripts.OpenNat.Mapping),
                 typeof(Open.Nat.Mapping)
             );

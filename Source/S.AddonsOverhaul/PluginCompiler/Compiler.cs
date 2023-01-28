@@ -8,10 +8,9 @@ using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
-using S.AddonsOverhaul.Converter;
+using S.AddonsOverhaul.Modules;
 using S.AddonsOverhaul.Core;
 using S.AddonsOverhaul.PluginCompiler.Analyzers;
-using UnityEngine;
 
 namespace S.AddonsOverhaul.PluginCompiler
 {
@@ -65,10 +64,19 @@ namespace S.AddonsOverhaul.PluginCompiler
             "System.Collections.Immutable.dll",
         };
 
-        public static bool Compile(string addonName, string[] sourceFiles, bool trustedCode = false)
+        public static bool Compile(string addonName, string addonAuthor, string[] sourceFiles, bool trustedCode = false)
         {
-            var syntaxTrees = new List<SyntaxTree>();
 
+            var lastCompilation = Directory.GetParent(sourceFiles.First()).LastWriteTime.Ticks;
+            var assemblyName = addonName + " - AssemblyCSharp";
+            if (lastCompilation < DateTime.UtcNow.Ticks && File.Exists(Path.Combine("AddonManager", "AddonsCache", assemblyName)))
+            {
+                AddonsLogger.Log("Skipping compilation of, " + addonName);
+                return true;
+            }
+
+            var syntaxTrees = new List<SyntaxTree>();
+            
             // Parse all files
             foreach (var sourceFile in sourceFiles)
             {
@@ -80,7 +88,7 @@ namespace S.AddonsOverhaul.PluginCompiler
                     return false;
                 }
 
-                syntaxTrees.Add(CSharpSyntaxTree.ParseText(Converter.Converter.ConvertScript(File.ReadAllText(sourceFile))));
+                syntaxTrees.Add(CSharpSyntaxTree.ParseText(Converter.ToOverhaulFomat(File.ReadAllText(sourceFile))));
             }
 
             // Check server/game instance (might make this more thorough or include it as part of signature)
@@ -106,8 +114,8 @@ namespace S.AddonsOverhaul.PluginCompiler
             // Compile
             AddonsLogger.Log($"Linking addon '{addonName}'...");
             
-            var assemblyName = addonName + "-Assembly";
-            var compilation = CSharpCompilation.Create($"{assemblyName}-{DateTime.UtcNow.Ticks}")
+            
+            var compilation = CSharpCompilation.Create($"{assemblyName}-{addonAuthor}-{DateTime.UtcNow.Ticks}")
                 .AddSyntaxTrees(syntaxTrees)
                 .WithReferences(references.ToArray())
                 .WithOptions(options);

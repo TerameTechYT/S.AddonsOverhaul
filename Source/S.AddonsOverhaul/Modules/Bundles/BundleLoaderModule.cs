@@ -4,7 +4,7 @@ using System.Collections;
 using System.IO;
 using Assets.Scripts.Networking;
 using Assets.Scripts.Networking.Transports;
-using S.AddonsOverhaul.API;
+using S.AddonsOverhaul.AssetBundles;
 using S.AddonsOverhaul.Core;
 using UnityEngine;
 

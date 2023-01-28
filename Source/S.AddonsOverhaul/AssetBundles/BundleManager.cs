@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace S.AddonsOverhaul.API
+namespace S.AddonsOverhaul.AssetBundles
 {
     /// <summary>
     ///     AssetManager API class. Provides support for asset bundle lookup.

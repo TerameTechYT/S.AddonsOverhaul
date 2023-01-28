@@ -1,6 +1,6 @@
 // Stationeers.Addons (c) 2018-2022 Damian 'Erdroy' Korczowski & Contributors
 
-using S.AddonsOverhaul.API;
+using S.AddonsOverhaul.AssetBundles;
 
 namespace S.AddonsOverhaul.PluginCompiler.Whitelists
 {

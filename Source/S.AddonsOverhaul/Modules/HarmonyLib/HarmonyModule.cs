@@ -23,7 +23,7 @@ namespace S.AddonsOverhaul.Modules.HarmonyLib
         /// <inheritdoc />
         public void Initialize()
         {
-            _harmony = new Harmony("com.s.aoverhaul");
+            _harmony = new Harmony("com.s.addonsoverhaul");
         }
 
         /// <inheritdoc />
