@@ -87,7 +87,11 @@ namespace S.AddonsOverhaul.Core
         ///     LiveReload module reference
         /// </summary>
         public LiveReloadModule LiveReload { get; private set; }
-        
+
+        /// <summary>
+        ///     LiveReload module reference
+        /// </summary>
+
         /// <summary>
         ///     Gets true when the loader is fully loaded.
         /// </summary>
@@ -126,7 +130,7 @@ namespace S.AddonsOverhaul.Core
             PluginLoader = InitializeModule<PluginLoaderModule>();
             Harmony = InitializeModule<HarmonyModule>();
             LiveReload = InitializeModule<LiveReloadModule>();
-            
+
             ImGuiUn.Layout += OnLayout;
         }
 

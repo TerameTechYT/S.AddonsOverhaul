@@ -63,7 +63,7 @@ namespace S.AddonsOverhaul.Modules.Plugins
                 {
                     var data = webRequest.downloadHandler.text.Trim();
 
-                    AddonsLogger.Log($"Latest Stationeers.Addons version is {data}. Installed {Constants.Version}");
+                    AddonsLogger.Log($"Latest Stationeers.Addons version is {data}. Installed {Constants.VersionOffical}");
 
                     // If the current version is the same as the latest one, just exit the coroutine.
                     if (Constants.VersionOffical == data)
