@@ -3,7 +3,7 @@
 # Stationeers.Addons
 **S.AddonsOverhaul** is a fully-fledged modding framework for [Stationeers](https://store.steampowered.com/app/544550/Stationeers/). Working just like the standard mods (XML) but with scripting and custom-content support!
 
-## ***DO NOT ASK FOR HELP WITH THIS, I AM NOT CONTINUING THIS PROJECT FURTHER, I SIMPLY UPLOADED IT SO PEOPLE CAN USE IT FOR A REFERENCE WHATEVER***
+## ***DO NOT ASK FOR HELP WITH THIS, I AM NOT CONTINUING THIS PROJECT FURTHER, I SIMPLY UPLOADED IT SO PEOPLE CAN USE IT FOR A REFERENCE IF THEY WISH***
 
 ## Download & Installation
 If you have already installed the Addons, make sure to run file verification through Steam before installing a new version (go to Steam, click RMB on the game, open **Properties**, go to **Local Files** and click on **Verify integrity of game files...**)!
