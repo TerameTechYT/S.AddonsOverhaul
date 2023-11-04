@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CC37B64D-6637-4E11-AB99-30A82343CD8C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>S.AddonsOverhaul</RootNamespace>
+    <AssemblyName>S.AddonsOverhaul</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <LangVersion>9</LangVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Build\Loader\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Build\Loader\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Publish'">
+    <PostBuildEvent>
+        del *.pdb
+        del *.xml
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.2.2.2\lib\net45\0Harmony.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=4.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.4.6.0\lib\netstandard2.0\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Aliases>global</Aliases>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=4.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.4.6.0\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.7.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=7.0.0.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.7.0.2\lib\net462\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.7.0.0\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <!-- Import Game/Unity DLL references -->
+  <Import Project="$(SolutionDir)Stationeers.VS.References.props" />
+  <ItemGroup>
+    <Compile Include="API\Config\FakeConfigurationValue.cs" />
+    <Compile Include="API\Config\Configuration.cs" />
+    <Compile Include="API\Config\ConfigurationElement.cs" />
+    <Compile Include="API\Config\ConfigurationValue.cs" />
+    <Compile Include="API\Config\FakeConfiguration.cs" />
+    <Compile Include="API\Config\FakeConfigurationElement.cs" />
+    <Compile Include="Core\Configs\Functions.cs" />
+    <Compile Include="Core\Interfaces\Log\LogLevel.cs" />
+    <Compile Include="Core\Interfaces\Plugin\AddonPlugin.cs" />
+    <Compile Include="Core\Interfaces\Settings\AddonsSettingElement.cs" />
+    <Compile Include="Core\Interfaces\Plugin\PluginInfo.cs" />
+    <Compile Include="API\BundleManager.cs" />
+    <Compile Include="Core\Compilation\Converter.cs" />
+    <Compile Include="Core\Configs\DllImports.cs" />
+    <Compile Include="Core\Interfaces\Settings\AddonsSettings.cs" />
+    <Compile Include="Core\LocalMods.cs" />
+    <Compile Include="Core\AddonsLogger.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Core\Interfaces\Settings\AddonsSettingItem.cs" />
+    <Compile Include="Core\Modules\Bundles\BundleLoaderModule.cs" />
+    <Compile Include="Core\Modules\HarmonyLib\HarmonyModule.cs" />
+    <Compile Include="Core\Interfaces\Module\IModule.cs" />
+    <Compile Include="Core\Modules\LiveReload\LiveReloadModule.cs" />
+    <Compile Include="Core\Modules\Plugins\PluginLoaderModule.cs" />
+    <Compile Include="Core\Modules\VersionCheck\VersionCheckModule.cs" />
+    <Compile Include="Core\Modules\Workshop\WorkshopManagerPatch.cs" />
+    <Compile Include="Core\Modules\Workshop\WorkshopModule.cs" />
+    <Compile Include="Core\Interfaces\Plugin\IPlugin.cs" />
+    <Compile Include="Core\LoaderManager.cs" />
+    <Compile Include="Loader.cs" />
+    <Compile Include="Core\Modules\Plugins\PluginCompilerModule.cs" />
+    <Compile Include="Core\Compilation\Compiler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Link>Git\LICENSE</Link>
+    </None>
+    <None Include="..\..\README.md">
+      <Link>Git\README.md</Link>
+    </None>
+    <None Include="..\..\VERSION">
+      <Link>Git\VERSION</Link>
+    </None>
+    <None Include="..\Stationeers.VS.props">
+      <Link>Configs\Stationeers.VS.props</Link>
+    </None>
+    <None Include="..\Stationeers.VS.References.props">
+      <Link>Configs\Stationeers.VS.References.props</Link>
+    </None>
+    <None Include="..\UnityCommon.props">
+      <Link>Configs\UnityCommon.props</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSharpUtilities\CSharpUtilities.csproj">
+      <Project>{ceed7d5f-8dc0-486c-a561-51b1ec1c8965}</Project>
+      <Name>CSharpUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\.gitattributes">
+      <Link>Git\.gitattributes</Link>
+    </Content>
+    <Content Include="..\..\.gitignore">
+      <Link>Git\.gitignore</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- Import Stationeers VS properties - paths etc. -->
+  <Import Project="$(SolutionDir)Stationeers.VS.props" />
+</Project>
