@@ -3,9 +3,7 @@
 # Stationeers.Addons
 **S.AddonsOverhaul** is a fully-fledged modding framework for [Stationeers](https://store.steampowered.com/app/544550/Stationeers/). Working just like the standard mods (XML) but with scripting and custom-content support!
 
-***This project began shortly after "The Clinic Update" broke stationeers.addons, and I had been thinking maybe I could make it work, and it did. Sometime later I decided to remove the sandbox for more modding possibilities, then just started adding stuff and making the framework more reliable, and here we are now with this!***<br>
-
-**Please tell me if something does not work as I dont know how well this will work on other peoples computers**
+## ***DO NOT ASK FOR HELP WITH THIS, I AM NOT CONTINUING THIS PROJECT FURTHER, I SIMPLY UPLOADED IT SO PEOPLE CAN USE IT FOR A REFERENCE WHATEVER***
 
 ## Download & Installation
 If you have already installed the Addons, make sure to run file verification through Steam before installing a new version (go to Steam, click RMB on the game, open **Properties**, go to **Local Files** and click on **Verify integrity of game files...**)!
@@ -24,9 +22,6 @@ Go to [Releases](https://github.com/TerameTechYT/S.AddonsOverhaul/releases), sel
 * Version check (Alert when your out-of-date)
 
 **EVERYTHING CREATED BY ADDONS OVERHAUL IS IN THE STATIONEERS FOLDER IN `DOCUMENTS/MY GAMES`!**
-
-## Join the discord
-https://discord.gg/FXUkxP8CYV
 
 ## Links
 * [Offical Discord](https://discord.gg/b6kFrUATdm)
